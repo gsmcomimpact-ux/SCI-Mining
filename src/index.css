@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom styles for high-end feel */
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+}
+
+::selection {
+  background-color: rgba(245, 158, 11, 0.3);
+  color: #ffffff;
+}

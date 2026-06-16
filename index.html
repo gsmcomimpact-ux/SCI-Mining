@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCI Mining - Exploration Aurifère Maradi & Agadez</title>
+    <script>
+      window.addEventListener('error', function(event) {
+        var errDiv = document.getElementById('debug-error-overlay');
+        if (!errDiv) {
+          errDiv = document.createElement('div');
+          errDiv.id = 'debug-error-overlay';
+          errDiv.style.position = 'fixed';
+          errDiv.style.top = '0';
+          errDiv.style.left = '0';
+          errDiv.style.width = '100%';
+          errDiv.style.backgroundColor = '#7f1d1d';
+          errDiv.style.color = '#fecaca';
+          errDiv.style.padding = '15px';
+          errDiv.style.zIndex = '999999';
+          errDiv.style.fontFamily = 'monospace';
+          errDiv.style.fontSize = '12px';
+          errDiv.style.overflowWrap = 'break-word';
+          errDiv.style.whiteSpace = 'pre-wrap';
+          errDiv.style.borderBottom = '4px solid #ef4444';
+          document.body.appendChild(errDiv);
+        }
+        errDiv.textContent += '\n[Error]: ' + event.message + ' at ' + event.filename + ':' + event.lineno + ':' + event.colno;
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        var errDiv = document.getElementById('debug-error-overlay');
+        if (!errDiv) {
+          errDiv = document.createElement('div');
+          errDiv.id = 'debug-error-overlay';
+          errDiv.style.position = 'fixed';
+          errDiv.style.top = '0';
+          errDiv.style.left = '0';
+          errDiv.style.width = '100%';
+          errDiv.style.backgroundColor = '#7f1d1d';
+          errDiv.style.color = '#fecaca';
+          errDiv.style.padding = '15px';
+          errDiv.style.zIndex = '999999';
+          errDiv.style.fontFamily = 'monospace';
+          errDiv.style.fontSize = '12px';
+          errDiv.style.overflowWrap = 'break-word';
+          errDiv.style.whiteSpace = 'pre-wrap';
+          errDiv.style.borderBottom = '4px solid #ef4444';
+          document.body.appendChild(errDiv);
+        }
+        errDiv.textContent += '\n[Promise Rejection]: ' + (event.reason ? (event.reason.message || event.reason) : 'Unknown Reason');
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

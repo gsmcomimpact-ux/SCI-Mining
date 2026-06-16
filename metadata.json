@@ -1,0 +1,6 @@
+{
+  "name": "SCI Mining",
+  "description": "Portail corporatif officiel de SCI Mining. Présentation de l'entreprise, de son ingénierie d'exploration de pointe et de ses projets aurifères durables au cœur des régions de Maradi et d'Agadez au Niger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
