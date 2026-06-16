@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { GoldDeposit } from "../types";
-import { X, Globe, MapPin, Award, CheckCircle2, FileText, Calendar, Briefcase, Info } from "lucide-react";
+import { X, Globe, MapPin, Award, CheckCircle2, Briefcase } from "lucide-react";
 import { Language, STATIC_TRANSLATIONS } from "../translations";
 
 interface ProjectModalProps {
@@ -16,21 +16,9 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ deposit, onClose, onContactRequest, lang }: ProjectModalProps) {
-  const [notification, setNotification] = useState<string | null>(null);
-
   if (!deposit) return null;
 
   const t = STATIC_TRANSLATIONS[lang];
-
-  const handleDownload = () => {
-    const alertMsg = lang === "fr" 
-      ? `Dossier géotechnique de ${deposit.name} en cours de préparation... Téléchargement imminent.`
-      : `Geotechnical dossier for ${deposit.name} is being prepared... PDF download starting soon.`;
-    setNotification(alertMsg);
-    setTimeout(() => {
-      setNotification(null);
-    }, 4500);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
@@ -172,40 +160,17 @@ export default function ProjectModal({ deposit, onClose, onContactRequest, lang 
             </div>
           </div>
 
-          {/* Notification Toast inside Modal */}
-          {notification && (
-            <div className="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl text-neutral-200 text-xs flex items-center gap-3 animate-fade-in">
-              <Info className="w-4.5 h-4.5 text-amber-500 shrink-0" />
-              <span>{notification}</span>
-            </div>
-          )}
-
           {/* Action Row */}
-          <div className="border-t border-neutral-850 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-xs text-neutral-400 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-amber-500/70" />
-              <span>{t.modalAuditLabel}</span>
-            </div>
-            
-            <div className="flex gap-3 w-full sm:w-auto">
-              <button
-                onClick={handleDownload}
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 text-xs bg-neutral-800 hover:bg-neutral-750 text-neutral-100 hover:text-white px-5 py-3 rounded-xl border border-neutral-750 transition-all cursor-pointer"
-              >
-                <FileText className="w-4 h-4" />
-                {t.modalDownloadBtn}
-              </button>
-
-              <button
-                onClick={() => {
-                  onContactRequest(deposit.name);
-                }}
-                className="flex-1 sm:flex-none flex items-center justify-center gap-2 text-xs bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold px-6 py-3 rounded-xl shadow-lg transition-all cursor-pointer"
-              >
-                <Briefcase className="w-4 h-4" />
-                {t.modalMeetingBtn}
-              </button>
-            </div>
+          <div className="border-t border-neutral-850 pt-8 flex items-center justify-center">
+            <button
+              onClick={() => {
+                onContactRequest(deposit.name);
+              }}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 text-xs bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all cursor-pointer"
+            >
+              <Briefcase className="w-4 h-4" />
+              {t.modalMeetingBtn}
+            </button>
           </div>
         </div>
       </div>

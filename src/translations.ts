@@ -150,8 +150,6 @@ export interface StaticTranslation {
   modalProgressTitle: string;
   modalProgressSub: string;
   modalAtoutsTitle: string;
-  modalAuditLabel: string;
-  modalDownloadBtn: string;
   modalMeetingBtn: string;
 }
 
@@ -282,8 +280,6 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     modalProgressTitle: "Stadiomètre Technique d'Avancée",
     modalProgressSub: "Maturité du projet",
     modalAtoutsTitle: "Atouts Majeurs du Projet",
-    modalAuditLabel: "Dernier point d'audit géophysique : Janvier 2026.",
-    modalDownloadBtn: "Dépôt Géologique (PDF)",
     modalMeetingBtn: "Rendez-vous confidentiel"
   },
   en: {
@@ -412,8 +408,6 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     modalProgressTitle: "Technical Development Progress",
     modalProgressSub: "Project Maturity",
     modalAtoutsTitle: "Concession Advantages",
-    modalAuditLabel: "Latest geophysical data check: January 2026.",
-    modalDownloadBtn: "Geology Dossier (PDF)",
     modalMeetingBtn: "Request Confidential Meeting"
   }
 };
