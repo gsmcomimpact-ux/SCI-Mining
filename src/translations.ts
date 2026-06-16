@@ -448,7 +448,7 @@ export const getLocalizedGoldDeposits = (lang: Language): GoldDeposit[] => [
       "Clean drinking water and solar energy infrastructure shared with local communities.",
       "90% skilled local recruitment for Maradi work sites and exploration drilling."
     ],
-    imageUrl: "/src/assets/images/sci_maradi_project_1781619707289.jpg"
+    imageUrl: new URL("./assets/images/sci_maradi_project_1781619707289.jpg", import.meta.url).href
   },
   {
     id: "sci-agadez",
@@ -478,7 +478,7 @@ export const getLocalizedGoldDeposits = (lang: Language): GoldDeposit[] => [
       "Clean gravity-based separation preserving fragile pastoral ecosystems.",
       "Scholarships and technical training programs dedicated to Agadez youths."
     ],
-    imageUrl: "/src/assets/images/sci_agadez_project_1781619722016.jpg"
+    imageUrl: new URL("./assets/images/sci_agadez_project_1781619722016.jpg", import.meta.url).href
   }
 ];
 

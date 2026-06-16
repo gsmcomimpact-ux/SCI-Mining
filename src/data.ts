@@ -26,7 +26,7 @@ export const GOLD_DEPOSITS: GoldDeposit[] = [
       "Infrastructures d'eau potable et d'énergie solaire partagées avec les populations locales.",
       "90% de recrutement local qualifiant pour les chantiers et forages de Maradi."
     ],
-    imageUrl: "/src/assets/images/sci_maradi_project_1781619707289.jpg"
+    imageUrl: new URL("./assets/images/sci_maradi_project_1781619707289.jpg", import.meta.url).href
   },
   {
     id: "sci-agadez",
@@ -47,7 +47,7 @@ export const GOLD_DEPOSITS: GoldDeposit[] = [
       "Méthode gravimétrique propre respectueuse des écosystèmes pastoraux ordinaires.",
       "Programmes de bourses d'études techniques dédiés aux jeunes d'Agadez."
     ],
-    imageUrl: "/src/assets/images/sci_agadez_project_1781619722016.jpg"
+    imageUrl: new URL("./assets/images/sci_agadez_project_1781619722016.jpg", import.meta.url).href
   }
 ];
 

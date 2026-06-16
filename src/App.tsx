@@ -53,11 +53,11 @@ export default function App() {
   const t = STATIC_TRANSLATIONS[lang];
 
   // Generated premium African representation imagery paths
-  const heroImgUrl = "/src/assets/images/sci_mining_hero_1781619805773.jpg";
-  const boardroomImgUrl = "/src/assets/images/sci_mining_boardroom_1781619820404.jpg";
-  const esgEnvImgUrl = "/src/assets/images/sci_esg_env_1781619737986.jpg";
-  const esgSocImgUrl = "/src/assets/images/sci_esg_soc_1781619754042.jpg";
-  const esgGovImgUrl = "/src/assets/images/sci_esg_gov_1781619769149.jpg";
+  const heroImgUrl = new URL("./assets/images/sci_mining_hero_1781619805773.jpg", import.meta.url).href;
+  const boardroomImgUrl = new URL("./assets/images/sci_mining_boardroom_1781619820404.jpg", import.meta.url).href;
+  const esgEnvImgUrl = new URL("./assets/images/sci_esg_env_1781619737986.jpg", import.meta.url).href;
+  const esgSocImgUrl = new URL("./assets/images/sci_esg_soc_1781619754042.jpg", import.meta.url).href;
+  const esgGovImgUrl = new URL("./assets/images/sci_esg_gov_1781619769149.jpg", import.meta.url).href;
 
   const activeEsgImg = activeESGPillar === "env" 
     ? esgEnvImgUrl 
