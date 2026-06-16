@@ -75,36 +75,6 @@ export default function ProjectModal({ deposit, onClose, onContactRequest, lang 
         </div>
 
         <div className="p-6 md:p-8 space-y-8">
-          {/* Key Indicators Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-neutral-950/40 p-4 rounded-xl border border-neutral-800 space-y-1">
-              <span className="text-[9px] text-neutral-500 uppercase tracking-wider block">{t.modalReservesLabel}</span>
-              <span className="text-sm font-semibold text-white block truncate">{deposit.estimatedReserves}</span>
-              <span className="text-[9px] text-neutral-400 block font-mono">{t.modalReservesSub}</span>
-            </div>
-
-            <div className="bg-neutral-950/40 p-4 rounded-xl border border-neutral-800 space-y-1">
-              <span className="text-[9px] text-neutral-500 uppercase tracking-wider block">{t.modalCapexLabel}</span>
-              <span className="text-sm font-semibold text-amber-400 block font-mono">{deposit.capex}</span>
-              <span className="text-[9px] text-neutral-400 block">{t.modalCapexSub}</span>
-            </div>
-
-            <div className="bg-neutral-950/40 p-4 rounded-xl border border-neutral-800 space-y-1">
-              <span className="text-[9px] text-neutral-500 uppercase tracking-wider block">{t.modalIrrLabel}</span>
-              <span className="text-sm font-semibold text-emerald-400 block font-mono">{deposit.irr}</span>
-              <span className="text-[9px] text-neutral-400 block">{t.modalIrrSub}</span>
-            </div>
-
-            <div className="bg-neutral-950/40 p-4 rounded-xl border border-neutral-800 space-y-1">
-              <span className="text-[9px] text-neutral-500 uppercase tracking-wider block">{t.modalGradeLabel}</span>
-              <span className="text-sm font-semibold text-white block flex items-center gap-1 font-mono">
-                <Award className="w-4 h-4 text-amber-500" />
-                {deposit.grade}
-              </span>
-              <span className="text-[9px] text-neutral-400 block">{t.modalGradeSub}</span>
-            </div>
-          </div>
-
           {/* Project Details */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Description Text */}
@@ -117,33 +87,15 @@ export default function ProjectModal({ deposit, onClose, onContactRequest, lang 
               </p>
               
               <div className="p-4 bg-neutral-950 rounded-xl border border-neutral-850 space-y-2 text-xs">
-                <span className="text-amber-500 font-semibold block">{t.modalGuaranteeLabel}</span>
+                <span className="text-amber-550 font-semibold block">{t.modalGuaranteeLabel}</span>
                 <p className="text-neutral-400 leading-relaxed text-[11px]">
                   {t.modalGuaranteeText}
                 </p>
               </div>
             </div>
 
-            {/* Highlights and Progress bar */}
+            {/* Highlights */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="space-y-3">
-                <h4 className="text-xs font-bold text-neutral-300 uppercase tracking-widest border-b border-neutral-800 pb-2">
-                  {t.modalProgressTitle}
-                </h4>
-                <div className="space-y-1.5">
-                  <div className="flex justify-between items-center text-xs text-neutral-400 font-mono">
-                    <span>{t.modalProgressSub}</span>
-                    <span className="text-amber-500 font-bold">{deposit.progress}%</span>
-                  </div>
-                  <div className="w-full h-2 bg-neutral-950 rounded-full overflow-hidden border border-neutral-800">
-                    <div className="h-full bg-amber-500 rounded-full" style={{ width: `${deposit.progress}%` }}></div>
-                  </div>
-                  <div className="text-[9px] text-neutral-500 italic text-right font-mono">
-                    {deposit.phase}
-                  </div>
-                </div>
-              </div>
-
               <div className="space-y-3">
                 <h4 className="text-xs font-bold text-neutral-300 uppercase tracking-widest border-b border-neutral-800 pb-2">
                   {t.modalAtoutsTitle}

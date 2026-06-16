@@ -124,7 +124,6 @@ export default function App() {
           {/* Navigation Simple Desktop */}
           <nav className="hidden xl:flex items-center gap-6 lg:gap-8 text-xs font-semibold uppercase tracking-wider text-neutral-400">
             <a href="#" className="hover:text-amber-500 transition-colors">{t.navHome}</a>
-            <a href="#indicators-section" className="hover:text-amber-500 transition-colors">{t.navIntervention}</a>
             <a href="#projects-section" className="hover:text-amber-500 transition-colors">{t.navProjects}</a>
             <a href="#esg-section" className="hover:text-amber-500 transition-colors">{t.navEthics}</a>
             <a href="#faq-section" className="hover:text-amber-500 transition-colors">{t.navFaq}</a>
@@ -248,26 +247,24 @@ export default function App() {
               {t.sidebarText}
             </p>
 
-            <div className="border-t border-neutral-800 pt-4 space-y-4">
-              <div className="space-y-1">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-neutral-400">{t.sidebarProgressMaradi}</span>
-                  <span className="text-amber-500 font-mono font-bold">85%</span>
-                </div>
-                <div className="h-1 bg-neutral-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-amber-500 rounded-full animate-pulse" style={{ width: "85%" }}></div>
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-neutral-400">{t.sidebarProgressAgadez}</span>
-                  <span className="text-amber-500 font-mono font-bold">55%</span>
-                </div>
-                <div className="h-1 bg-neutral-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-amber-500 rounded-full" style={{ width: "55%" }}></div>
-                </div>
-              </div>
+            <div className="border-t border-neutral-800 pt-4 space-y-3 font-sans">
+              <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-wider block">
+                {lang === "fr" ? "Méthodologie Propre" : "Clean Methodology"}
+              </span>
+              <ul className="space-y-2 text-[11px] text-neutral-350">
+                <li className="flex gap-2 items-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                  <span>{lang === "fr" ? "Séparation gravimétrique 100% physique" : "100% physical gravity separation"}</span>
+                </li>
+                <li className="flex gap-2 items-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                  <span>{lang === "fr" ? "Respect de l'environnement au Sahel" : "Environmental protection in the Sahel"}</span>
+                </li>
+                <li className="flex gap-2 items-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                  <span>{lang === "fr" ? "Eau potable de forage partagée aux populations" : "Drilling drinking water shared with populations"}</span>
+                </li>
+              </ul>
             </div>
 
             <a 
@@ -276,86 +273,6 @@ export default function App() {
             >
               {t.sidebarReportBtn}
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* PRESENTATION SCI MINING & PERSPECTIVES */}
-      <section id="indicators-section" className="py-24 px-6 bg-gradient-to-b from-neutral-950 to-neutral-900 border-t border-neutral-900 relative">
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-            <div className="lg:col-span-8 space-y-3">
-              <span className="text-[10px] text-amber-500 font-mono tracking-widest font-semibold uppercase block">
-                {t.indSubtitle}
-              </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-sans font-bold text-white max-w-2xl leading-tight">
-                {t.indTitle}
-              </h2>
-            </div>
-            <div className="lg:col-span-4">
-              <p className="text-xs md:text-sm text-neutral-400 leading-relaxed font-sans font-light">
-                {t.indDesc}
-              </p>
-            </div>
-          </div>
-
-          {/* Cards indicators */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sciIndicators.map((ind) => (
-              <div 
-                key={ind.id}
-                className="bg-neutral-900/40 hover:bg-neutral-900/80 p-6 rounded-2xl border border-neutral-850 hover:border-amber-500/20 shadow-lg hover:shadow-2xl transition-all duration-300 space-y-3 group"
-              >
-                <span className="text-[10px] text-neutral-500 font-mono block">
-                  {ind.sub}
-                </span>
-                
-                <div className="space-y-1">
-                  <span className="text-[10px] text-neutral-400 uppercase tracking-widest block font-medium">
-                    {ind.label}
-                  </span>
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white font-sans block group-hover:text-amber-500 transition-colors">
-                    {ind.value}
-                  </span>
-                </div>
-
-                <p className="text-xs text-neutral-300 leading-relaxed pt-2 border-t border-neutral-950/60 font-light font-sans">
-                  {ind.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Due Diligence Data-Room Banner */}
-          <div className="relative bg-neutral-955 rounded-3xl overflow-hidden border border-neutral-855 p-6 md:p-8 lg:p-12 shadow-2xl">
-            <div className="absolute inset-0">
-              <img 
-                src={boardroomImgUrl}
-                alt={lang === "fr" ? "Présentation géologique de SCI Mining" : "SCI Mining geological boardroom conference"}
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover opacity-15"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-neutral-950/40"></div>
-            </div>
-
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-4">
-                <span className="text-[10px] text-amber-500 font-mono tracking-widest block font-semibold uppercase">{t.duePill}</span>
-                <h3 className="text-lg md:text-xl font-bold text-white font-sans">{t.dueTitle}</h3>
-                <p className="text-xs md:text-sm text-neutral-350 font-sans font-light leading-relaxed max-w-2xl">
-                  {t.dueDesc}
-                </p>
-              </div>
-              <div className="lg:col-span-4 flex justify-end w-full">
-                <a 
-                  href="#contact-section" 
-                  className="bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs uppercase px-6 py-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer w-full md:w-auto text-center"
-                >
-                  <FileSpreadsheet className="w-4 h-4" />
-                  <span>{t.dueBtn}</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -401,12 +318,9 @@ export default function App() {
                   <div className="absolute right-0 top-0 w-24 h-24 bg-amber-500/5 rounded-full blur-xl group-hover:bg-amber-500/10 transition-colors pointer-events-none"></div>
                   
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[9px] font-mono font-bold tracking-widest uppercase bg-amber-500/10 text-amber-550 border border-amber-500/20 px-2.5 py-1 rounded-full">
-                      {t.projGrade}: {deposit.grade}
-                    </span>
                     <span className="text-[9px] text-neutral-400 font-mono flex items-center gap-1 bg-neutral-950 p-1 px-2.5 rounded border border-neutral-850">
-                      <MapPin className="w-3 h-3 text-amber-500" />
-                      {deposit.location.split(",")[0]}
+                      <MapPin className="w-3  h-3 text-amber-500" />
+                      {deposit.location}
                     </span>
                   </div>
 
@@ -416,31 +330,23 @@ export default function App() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-6 flex-1">
+                <div className="p-6 space-y-4 flex-1">
                   <p className="text-xs text-neutral-400 leading-relaxed font-sans font-light">
                     {deposit.description}
                   </p>
 
-                  <div className="space-y-1.5 pt-2">
-                    <div className="flex justify-between items-center text-[9px] text-neutral-500 font-mono">
-                      <span>{t.projProgressLabel}</span>
-                      <span className="text-amber-500 font-bold">{deposit.progress}%</span>
-                    </div>
-                    <div className="w-full h-1 bg-neutral-950 rounded-full overflow-hidden border border-neutral-850">
-                      <div className="h-full bg-amber-500 rounded-full" style={{ width: `${deposit.progress}%` }}></div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2 text-[10px] pt-4 border-t border-neutral-855">
-                    <div className="p-2 border border-neutral-850 rounded bg-neutral-950/20">
-                      <span className="text-neutral-500 block text-[9px] mb-0.5">{t.projReserves}</span>
-                      <span className="text-neutral-200 font-semibold uppercase tracking-tight">{deposit.estimatedReserves}</span>
-                    </div>
-
-                    <div className="p-2 border border-neutral-850 rounded bg-neutral-950/20">
-                      <span className="text-neutral-500 block text-[9px] mb-0.5">{t.projIrr}</span>
-                      <span className="text-emerald-400 font-semibold font-mono">{deposit.irr}</span>
-                    </div>
+                  <div className="space-y-2 pt-4 border-t border-neutral-900">
+                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-amber-500 block">
+                      {lang === "fr" ? "Objectifs & Engagements" : "Key Concession Commitments"}
+                    </span>
+                    <ul className="space-y-1.5">
+                      {deposit.highlights.slice(0, 2).map((highlight, idx) => (
+                        <li key={idx} className="flex gap-2 text-xs text-neutral-350 leading-relaxed">
+                          <CheckCircle2 className="w-4 h-4 text-amber-500/80 shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
@@ -487,13 +393,6 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* SIMULATEUR FINANCIER D'INVESTISSEMENT */}
-      <section className="py-24 px-6 bg-neutral-900/10 border-t border-neutral-900 relative">
-        <div className="max-w-7xl mx-auto">
-          <FinanceSimulator lang={lang} />
         </div>
       </section>
 
