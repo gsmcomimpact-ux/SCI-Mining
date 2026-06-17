@@ -675,9 +675,9 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 max-w-4xl mx-auto">
             {/* Email 1 */}
-            <div className="bg-neutral-950 border border-neutral-850 p-6 rounded-2xl flex flex-col items-center justify-between space-y-4 group hover:border-amber-500/20 transition-all duration-300 animate-fade-in">
+            <div className="bg-neutral-950 border border-neutral-850 p-6 rounded-2xl flex flex-col items-center justify-between space-y-4 group hover:border-amber-500/20 transition-all duration-300 animate-fade-in animate-once">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
                 <Mail className="w-5 h-5" />
               </div>
@@ -702,13 +702,13 @@ export default function App() {
             </div>
 
             {/* Email 2 */}
-            <div className="bg-neutral-950 border border-neutral-850 p-6 rounded-2xl flex flex-col items-center justify-between space-y-4 group hover:border-amber-500/20 transition-all duration-300 animate-fade-in">
+            <div className="bg-neutral-950 border border-neutral-850 p-6 rounded-2xl flex flex-col items-center justify-between space-y-4 group hover:border-amber-500/20 transition-all duration-300 animate-fade-in animate-once">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-yellow-500 flex items-center justify-center text-neutral-950">
                 <Lock className="w-5 h-5" />
               </div>
               <div className="space-y-1 w-full overflow-hidden">
                 <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider block">{t.contactEmail2Label}</span>
-                <span className="text-sm font-semibold text-white block truncate select-all">sciprotonmaol.com@protonmail.com</span>
+                <span className="text-sm font-semibold text-white block truncate select-all font-mono">sciprotonmaol.com@protonmail.com</span>
               </div>
               <div className="flex gap-2 w-full pt-2">
                 <a 
@@ -723,6 +723,27 @@ export default function App() {
                 >
                   {copiedEmail === "sciprotonmaol.com@protonmail.com" ? t.contactBtnCopied : t.contactBtnCopy}
                 </button>
+              </div>
+            </div>
+
+            {/* Adresse Physique */}
+            <div className="bg-neutral-950 border border-neutral-850 p-6 rounded-2xl flex flex-col items-center justify-between space-y-4 group hover:border-amber-500/20 transition-all duration-300 animate-fade-in animate-once">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div className="space-y-1 w-full overflow-hidden">
+                <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-wider block">{t.contactAddressLabel}</span>
+                <span className="text-xs font-semibold text-white block leading-relaxed select-all">{t.contactAddressValue}</span>
+              </div>
+              <div className="w-full pt-2">
+                <a 
+                  href="https://maps.google.com/?q=Quartier+Plateau,+Niamey,+Niger"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block py-2 px-3 bg-neutral-900 hover:bg-neutral-850 text-neutral-200 hover:text-white font-bold text-[10px] uppercase rounded-lg text-center transition-all border border-neutral-800 font-sans"
+                >
+                  {lang === "fr" ? "Voir sur la carte" : "View on Map"}
+                </a>
               </div>
             </div>
           </div>

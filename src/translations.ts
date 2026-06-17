@@ -125,6 +125,8 @@ export interface StaticTranslation {
   contactDesc: string;
   contactEmail1Label: string;
   contactEmail2Label: string;
+  contactAddressLabel: string;
+  contactAddressValue: string;
   contactBtnWrite: string;
   contactBtnCopy: string;
   contactBtnCopied: string;
@@ -257,12 +259,14 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     contactDesc: "Pour initier une collaboration, obtenir des informations géologiques complémentaires ou planifier une rencontre technique, écrivez-nous directement à nos adresses de contact officielles.",
     contactEmail1Label: "Adresse Principale",
     contactEmail2Label: "Canal Sécurisé Proton",
+    contactAddressLabel: "Bureaux Administratifs",
+    contactAddressValue: "Quartier Plateau, Niamey, Niger",
     contactBtnWrite: "Écrire",
     contactBtnCopy: "Copier",
     contactBtnCopied: "Copié !",
     
     footerDesc: "SCI Mining S.A.",
-    footerPhone: "Bureaux et base technique de Maradi, République du Niger",
+    footerPhone: "Siège : Quartier Plateau, Niamey • Base technique : Maradi, Niger",
     footerRights: "© 2026 SCI Mining Gold Concessions. Tous droits réservés.",
     
     modalScope: "Exploration Privée SCI Mining • Niger",
@@ -385,12 +389,14 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     contactDesc: "To discuss joint ventures, request geological reports, or plan a technical review session, send an email to our official relations desks.",
     contactEmail1Label: "Corporate Desk",
     contactEmail2Label: "Secure Proton Mailbox",
+    contactAddressLabel: "Administrative HQ",
+    contactAddressValue: "Quartier Plateau, Niamey, Niger",
     contactBtnWrite: "Write",
     contactBtnCopy: "Copy",
     contactBtnCopied: "Copied!",
     
     footerDesc: "SCI Mining S.A.",
-    footerPhone: "Corporate offices and field headquarters in Maradi, Republic of Niger",
+    footerPhone: "HQ: Quartier Plateau, Niamey • Technical Base: Maradi, Niger",
     footerRights: "© 2026 SCI Mining Gold Concessions. All rights reserved.",
     
     modalScope: "SCI Mining Private Exploration • Niger",
