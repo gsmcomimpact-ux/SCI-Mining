@@ -168,7 +168,7 @@ export default function App() {
       </header>
 
       {/* HERO SECTION CHIC */}
-      <section className="relative min-h-[85vh] flex items-center py-20 lg:py-28 px-6 overflow-hidden bg-neutral-950">
+      <section className="relative min-h-[85vh] flex flex-col justify-center py-20 lg:py-28 px-6 overflow-hidden bg-neutral-950">
         <div className="absolute inset-0">
           <img 
             src={heroImgUrl}
@@ -180,99 +180,102 @@ export default function App() {
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-neutral-950/90 to-transparent pointer-events-none"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-8 space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono rounded-full font-semibold uppercase tracking-widest">
-              <span>{t.heroSubtitle}</span>
+        <div className="max-w-7xl mx-auto w-full relative z-10 space-y-12">
+          {/* Main Hero grid info splits */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-8 space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-mono rounded-full font-semibold uppercase tracking-widest">
+                <span>{t.heroSubtitle}</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-extrabold text-white tracking-tight leading-tight">
+                {t.heroTitle}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600">{t.heroTitleGradient}</span>{t.heroTitleEnd}
+              </h1>
+
+              <p className="text-xs sm:text-sm md:text-base text-neutral-300 font-sans font-light leading-relaxed max-w-3xl">
+                {t.heroDesc}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <a 
+                  href="#projects-section" 
+                  className="bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all font-bold text-xs uppercase px-7 py-4 rounded-xl shadow-xl flex items-center justify-center gap-2 tracking-wider cursor-pointer font-sans"
+                >
+                  <span>{t.heroBtnDiscover}</span>
+                  <ChevronRight className="w-4 h-4" />
+                </a>
+
+                <a 
+                  href="#contact-section" 
+                  className="bg-neutral-900 hover:bg-neutral-850/80 text-neutral-200 border border-neutral-800 transition-all font-semibold text-xs uppercase px-7 py-4 rounded-xl flex items-center justify-center gap-2 tracking-wider cursor-pointer font-sans"
+                >
+                  <span>{t.heroBtnContact}</span>
+                  <Mail className="w-4 h-4 text-amber-500" />
+                </a>
+              </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-extrabold text-white tracking-tight leading-tight">
-              {t.heroTitle}<span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600">{t.heroTitleGradient}</span>{t.heroTitleEnd}
-            </h1>
+            {/* Hero right panel: latest updates */}
+            <div className="lg:col-span-4 hidden lg:block bg-neutral-900/60 border border-neutral-850 p-6 rounded-2xl shadow-xl relative animate-fade-in">
+              <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-tr from-amber-600 to-yellow-500 rounded-full flex items-center justify-center text-black shadow-md">
+                <Award className="w-5 h-5" />
+              </div>
+              
+              <h4 className="text-xs font-bold text-amber-500 font-mono tracking-widest block mb-4 uppercase">
+                {t.sidebarTitle}
+              </h4>
+              
+              <p className="text-[11px] text-neutral-350 leading-relaxed mb-6 font-light font-sans">
+                {t.sidebarText}
+              </p>
 
-            <p className="text-xs sm:text-sm md:text-base text-neutral-300 font-sans font-light leading-relaxed max-w-3xl">
-              {t.heroDesc}
-            </p>
+              <div className="border-t border-neutral-800 pt-4 space-y-3 font-sans">
+                <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-wider block">
+                  {lang === "fr" ? "Méthodologie Propre" : "Clean Methodology"}
+                </span>
+                <ul className="space-y-2 text-[11px] text-neutral-350">
+                  <li className="flex gap-2 items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                    <span>{lang === "fr" ? "Séparation gravimétrique 100% physique" : "100% physical gravity separation"}</span>
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                    <span>{lang === "fr" ? "Respect de l'environnement au Sahel" : "Environmental protection in the Sahel"}</span>
+                  </li>
+                  <li className="flex gap-2 items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                    <span>{lang === "fr" ? "Eau potable de forage partagée aux populations" : "Drilling drinking water shared with populations"}</span>
+                  </li>
+                </ul>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a 
                 href="#projects-section" 
-                className="bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all font-bold text-xs uppercase px-7 py-4 rounded-xl shadow-xl flex items-center justify-center gap-2 tracking-wider cursor-pointer font-sans"
+                className="mt-6 w-full text-center text-xs text-neutral-300 hover:text-white bg-neutral-950 hover:bg-neutral-850 py-2.5 rounded-xl border border-neutral-800 block transition-all font-semibold font-sans"
               >
-                <span>{t.heroBtnDiscover}</span>
-                <ChevronRight className="w-4 h-4" />
+                {t.sidebarReportBtn}
               </a>
-
-              <a 
-                href="#contact-section" 
-                className="bg-neutral-900 hover:bg-neutral-850/80 text-neutral-200 border border-neutral-800 transition-all font-semibold text-xs uppercase px-7 py-4 rounded-xl flex items-center justify-center gap-2 tracking-wider cursor-pointer font-sans"
-              >
-                <span>{t.heroBtnContact}</span>
-                <Mail className="w-4 h-4 text-amber-500" />
-              </a>
-            </div>
-
-            {/* Credential items */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-12 border-t border-neutral-900 font-mono text-[10px]">
-              <div className="space-y-1 bg-neutral-955 p-3 rounded-lg border border-neutral-900">
-                <span className="text-neutral-500 block uppercase font-medium">{t.badgeLocations}</span>
-                <span className="text-amber-550 font-semibold block uppercase">{t.badgeLocationsVal}</span>
-              </div>
-              <div className="space-y-1 bg-neutral-955 p-3 rounded-lg border border-neutral-900">
-                <span className="text-neutral-500 block uppercase font-medium">{t.badgeProcess}</span>
-                <span className="text-amber-550 font-semibold block">{t.badgeProcessVal}</span>
-              </div>
-              <div className="space-y-1 bg-neutral-955 p-3 rounded-lg border border-neutral-900">
-                <span className="text-neutral-500 block uppercase font-medium">{t.badgeEquipment}</span>
-                <span className="text-amber-550 font-semibold block">{t.badgeEquipmentVal}</span>
-              </div>
-              <div className="space-y-1 bg-neutral-955 p-3 rounded-lg border border-neutral-900">
-                <span className="text-neutral-500 block uppercase font-medium">{t.badgeImpact}</span>
-                <span className="text-amber-550 font-semibold block">{t.badgeImpactVal}</span>
-              </div>
             </div>
           </div>
 
-          {/* Hero right panel: latest updates */}
-          <div className="lg:col-span-4 hidden lg:block bg-neutral-900/60 border border-neutral-850 p-6 rounded-2xl shadow-xl relative">
-            <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-tr from-amber-600 to-yellow-500 rounded-full flex items-center justify-center text-black shadow-md">
-              <Award className="w-5 h-5" />
+          {/* Centered Credential badges row stretching full-width */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-12 border-t border-neutral-900/60 font-mono text-[10px]">
+            <div className="space-y-1 bg-neutral-955 p-4 rounded-xl border border-neutral-900 flex flex-col justify-center items-center text-center hover:border-amber-500/20 transition-colors duration-300">
+              <span className="text-neutral-500 block uppercase font-medium">{t.badgeLocations}</span>
+              <span className="text-amber-550 font-bold block uppercase text-[11px] tracking-wide mt-0.5">{t.badgeLocationsVal}</span>
             </div>
-            
-            <h4 className="text-xs font-bold text-amber-500 font-mono tracking-widest block mb-4 uppercase">
-              {t.sidebarTitle}
-            </h4>
-            
-            <p className="text-[11px] text-neutral-350 leading-relaxed mb-6 font-light font-sans">
-              {t.sidebarText}
-            </p>
-
-            <div className="border-t border-neutral-800 pt-4 space-y-3 font-sans">
-              <span className="text-[10px] font-mono font-bold text-amber-500 uppercase tracking-wider block">
-                {lang === "fr" ? "Méthodologie Propre" : "Clean Methodology"}
-              </span>
-              <ul className="space-y-2 text-[11px] text-neutral-350">
-                <li className="flex gap-2 items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                  <span>{lang === "fr" ? "Séparation gravimétrique 100% physique" : "100% physical gravity separation"}</span>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                  <span>{lang === "fr" ? "Respect de l'environnement au Sahel" : "Environmental protection in the Sahel"}</span>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                  <span>{lang === "fr" ? "Eau potable de forage partagée aux populations" : "Drilling drinking water shared with populations"}</span>
-                </li>
-              </ul>
+            <div className="space-y-1 bg-neutral-955 p-4 rounded-xl border border-neutral-900 flex flex-col justify-center items-center text-center hover:border-amber-500/20 transition-colors duration-300">
+              <span className="text-neutral-500 block uppercase font-medium">{t.badgeProcess}</span>
+              <span className="text-amber-550 font-bold block text-[11px] tracking-wide mt-0.5">{t.badgeProcessVal}</span>
             </div>
-
-            <a 
-              href="#projects-section" 
-              className="mt-6 w-full text-center text-xs text-neutral-300 hover:text-white bg-neutral-950 hover:bg-neutral-850 py-2.5 rounded-xl border border-neutral-800 block transition-all font-semibold font-sans"
-            >
-              {t.sidebarReportBtn}
-            </a>
+            <div className="space-y-1 bg-neutral-955 p-4 rounded-xl border border-neutral-900 flex flex-col justify-center items-center text-center hover:border-amber-500/20 transition-colors duration-300">
+              <span className="text-neutral-500 block uppercase font-medium">{t.badgeEquipment}</span>
+              <span className="text-amber-550 font-bold block text-[11px] tracking-wide mt-0.5">{t.badgeEquipmentVal}</span>
+            </div>
+            <div className="space-y-1 bg-neutral-955 p-4 rounded-xl border border-neutral-900 flex flex-col justify-center items-center text-center hover:border-amber-500/20 transition-colors duration-300">
+              <span className="text-neutral-500 block uppercase font-medium">{t.badgeImpact}</span>
+              <span className="text-amber-550 font-bold block text-[11px] tracking-wide mt-0.5">{t.badgeImpactVal}</span>
+            </div>
           </div>
         </div>
       </section>
@@ -362,9 +365,9 @@ export default function App() {
           </div>
 
           {/* RSE Trust badge line */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-neutral-900/20 p-6 border border-neutral-900 rounded-2xl text-[11px] font-mono">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-neutral-900/20 p-6 border border-neutral-900 rounded-2xl text-[11px] font-mono max-w-5xl mx-auto">
+            <div className="flex items-center justify-center gap-3 text-center md:text-left">
+              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                 <CheckCircle2 className="w-4.5 h-4.5 text-amber-500" />
               </div>
               <div>
@@ -373,8 +376,8 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+            <div className="flex items-center justify-center gap-3 text-center md:text-left">
+              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                 <Users2 className="w-4.5 h-4.5 text-amber-500" />
               </div>
               <div>
@@ -383,8 +386,8 @@ export default function App() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+            <div className="flex items-center justify-center gap-3 text-center md:text-left">
+              <div className="w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                 <Lock className="w-4.5 h-4.5 text-amber-500" />
               </div>
               <div>
