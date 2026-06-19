@@ -605,7 +605,7 @@ export const getLocalizedFaqs = (lang: Language): FaqItem[] => [
       ? "Quelles sont les mesures concrètes de sécurité déployées pour sanctuariser les chantiers de Maradi et d'Agadez ?"
       : "What concrete security measures are in place to safeguard the Maradi and Agadez work sites?",
     answer: lang === "fr"
-      ? "We work in continuous collaboration with Niger's Ministry of the Interior and local Armed Forces (FDS) to accommodate military detachments directly on our exploration camp perimeters, ensuring permanent area protection. In addition, our field trucks are equipped with redundant real-time satellite GPS tracking devices."
+      ? "Nous travaillons en collaboration permanente avec le Ministère de l'Intérieur du Niger et les Forces de Défense et de Sécurité (FDS) pour déployer des détachements de protection directement sur le périmètre de nos camps d'exploration, garantissant une sécurité constante de la zone. De plus, nos véhicules de terrain sont équipés de traceurs GPS par satellite redondants en temps réel."
       : "We work in continuous collaboration with Niger's Ministry of the Interior and local Armed Forces (FDS) to accommodate military detachments directly on our exploration camp perimeters, ensuring permanent area protection. In addition, our field trucks are equipped with redundant real-time satellite GPS tracking devices."
   }
 ];

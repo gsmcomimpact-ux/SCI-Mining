@@ -765,7 +765,6 @@ export default function App() {
 
           <div className="flex gap-4 md:gap-6 font-mono text-[10px]">
             <span>Email: contact@scimining.com</span>
-            <span>Tel: +227 20 73 45 XX</span>
           </div>
 
           <div className="text-right text-[10px] text-neutral-600">
