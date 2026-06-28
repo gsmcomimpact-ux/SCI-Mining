@@ -265,9 +265,9 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     contactBtnCopy: "Copier",
     contactBtnCopied: "Copié !",
     
-    footerDesc: "SCI Mining S.A.",
+    footerDesc: "SCI Holding S.A.",
     footerPhone: "Siège : Quartier Plateau, Niamey • Base technique : Maradi, Niger",
-    footerRights: "© 2026 SCI Mining Gold Concessions. Tous droits réservés.",
+    footerRights: "© 2026 SCI Holding S.A. Tous droits réservés.",
     
     modalScope: "Exploration Privée SCI Mining • Niger",
     modalReservesLabel: "Évaluation des réserves",
@@ -395,9 +395,9 @@ export const STATIC_TRANSLATIONS: Record<Language, StaticTranslation> = {
     contactBtnCopy: "Copy",
     contactBtnCopied: "Copied!",
     
-    footerDesc: "SCI Mining S.A.",
+    footerDesc: "SCI Holding S.A.",
     footerPhone: "HQ: Quartier Plateau, Niamey • Technical Base: Maradi, Niger",
-    footerRights: "© 2026 SCI Mining Gold Concessions. All rights reserved.",
+    footerRights: "© 2026 SCI Holding S.A. All rights reserved.",
     
     modalScope: "SCI Mining Private Exploration • Niger",
     modalReservesLabel: "Asset Evaluation",

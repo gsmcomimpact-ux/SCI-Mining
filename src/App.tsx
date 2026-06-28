@@ -58,6 +58,7 @@ export default function App() {
   const esgEnvImgUrl = new URL("./assets/images/sci_esg_env_1781619737986.jpg", import.meta.url).href;
   const esgSocImgUrl = new URL("./assets/images/sci_esg_soc_1781619754042.jpg", import.meta.url).href;
   const esgGovImgUrl = new URL("./assets/images/sci_esg_gov_1781619769149.jpg", import.meta.url).href;
+  const logoImgUrl = new URL("./assets/images/sci_holding_logo_1782667701743.jpg", import.meta.url).href;
 
   const activeEsgImg = activeESGPillar === "env" 
     ? esgEnvImgUrl 
@@ -105,15 +106,17 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group text-neutral-100 shrink-0">
-            <div className="relative w-10 h-10 bg-gradient-to-tr from-amber-600 to-yellow-500 rounded-xl flex items-center justify-center text-black font-extrabold text-lg shadow-lg group-hover:scale-105 transition-all">
-              G
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-neutral-900 rounded-full flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
-              </div>
+            <div className="h-10 px-2.5 bg-white rounded-lg flex items-center justify-center shadow-md border border-neutral-200 group-hover:scale-105 transition-all">
+              <img 
+                src={logoImgUrl} 
+                alt="SCI Holding Logo" 
+                className="h-8 w-auto object-contain" 
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
-              <span className="font-sans font-extrabold text-lg tracking-tight text-white block uppercase leading-none">
-                SCI Mining
+              <span className="font-sans font-extrabold text-sm sm:text-base tracking-tight text-white block uppercase leading-none">
+                SCI Holding
               </span>
               <span className="text-[9px] tracking-wider text-amber-500 font-mono font-semibold uppercase block mt-1">
                 {lang === "fr" ? "Exploration Aurifère Maradi & Agadez" : "Gold Exploration Maradi & Agadez"}
@@ -757,8 +760,13 @@ export default function App() {
       <footer className="bg-neutral-955 border-t border-neutral-900 px-6 py-12 text-xs text-neutral-500 font-light">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-neutral-900 border border-neutral-800 rounded-lg flex items-center justify-center text-amber-550 font-extrabold text-xs">
-              M
+            <div className="h-8 px-2 bg-white rounded-md flex items-center justify-center shadow-sm border border-neutral-200">
+              <img 
+                src={logoImgUrl} 
+                alt="SCI Holding Logo" 
+                className="h-6 w-auto object-contain" 
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <span className="font-bold text-neutral-400 block tracking-wider uppercase font-sans">{t.footerDesc}</span>
